@@ -52,13 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom furniture brand colors
-				'warm-white': 'hsl(var(--warm-white))',
-				'soft-beige': 'hsl(var(--soft-beige))',
-				'warm-gray': 'hsl(var(--warm-gray))',
-				'charcoal': 'hsl(var(--charcoal))',
-				'terracotta': 'hsl(var(--terracotta))',
-				'sage': 'hsl(var(--sage))',
+				// Custom TrendyKartt colors
+				'trendy-red': 'hsl(var(--trendy-red))',
+				'trendy-red-dark': 'hsl(var(--trendy-red-dark))',
+				'trendy-gray': 'hsl(var(--trendy-gray))',
+				'trendy-light-gray': 'hsl(var(--trendy-light-gray))',
+				'sale-yellow': 'hsl(var(--sale-yellow))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

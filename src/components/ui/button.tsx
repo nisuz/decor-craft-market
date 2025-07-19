@@ -18,9 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-charcoal text-warm-white hover:bg-charcoal/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:scale-105",
-        cta: "bg-terracotta text-charcoal font-semibold hover:bg-terracotta/90 shadow-product hover:shadow-hover transition-all duration-300",
-        minimal: "bg-transparent border border-charcoal text-charcoal hover:bg-charcoal hover:text-warm-white transition-all duration-300",
+        trendy: "bg-trendy-red text-white hover:bg-trendy-red-dark transition-colors duration-200 font-medium",
+        trendyOutline: "border border-trendy-red text-trendy-red hover:bg-trendy-red hover:text-white transition-colors duration-200",
+        sale: "bg-sale-yellow text-black font-bold hover:bg-sale-yellow/90 transition-colors duration-200",
       },
       size: {
         default: "h-10 px-4 py-2",

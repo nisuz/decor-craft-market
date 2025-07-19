@@ -1,92 +1,60 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Search, ShoppingCart, Heart, User, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search, ShoppingBag, User } from "lucide-react";
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Shop", href: "/shop" },
-    { name: "Categories", href: "/categories" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
-
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-charcoal rounded"></div>
-            <span className="text-xl font-semibold text-charcoal">Furni</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-warm-gray hover:text-charcoal transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="flex items-center">
+            <ShoppingBag className="h-6 w-6 text-trendy-red mr-2" />
+            <span className="text-xl font-bold text-black">TRENDYKARTT</span>
           </div>
 
-          {/* Right Side Icons */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hidden sm:flex">
-              <Search className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 bg-terracotta rounded-full text-xs flex items-center justify-center text-charcoal font-medium">
-                0
-              </span>
-            </Button>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
-            
-            {/* Mobile menu button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+          {/* Search Bar */}
+          <div className="hidden md:flex flex-1 max-w-lg mx-8">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search for products, brands and more..."
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-trendy-red focus:border-transparent"
+              />
+              <Button 
+                size="sm" 
+                className="absolute right-1 top-1 h-8 px-3 bg-trendy-red hover:bg-trendy-red-dark"
+              >
+                <Search className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Actions */}
+          <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-1">
+              <Heart className="h-5 w-5 text-gray-600" />
+              <span className="text-sm text-gray-600">Wishlist</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <ShoppingCart className="h-5 w-5 text-gray-600" />
+              <span className="text-sm text-gray-600">Cart</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-1">
+              <User className="h-5 w-5 text-gray-600" />
+              <span className="text-sm text-gray-600">Login</span>
+            </div>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="block px-3 py-2 text-warm-gray hover:text-charcoal transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="px-3 py-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  <Search className="h-4 w-4 mr-2" />
-                  Search
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Category Navigation */}
+        <div className="hidden md:flex items-center space-x-8 py-3 border-t border-gray-100">
+          <a href="#" className="text-gray-700 hover:text-trendy-red transition-colors">Women</a>
+          <a href="#" className="text-gray-700 hover:text-trendy-red transition-colors">Men</a>
+          <a href="#" className="text-gray-700 hover:text-trendy-red transition-colors">Kids</a>
+          <a href="#" className="text-gray-700 hover:text-trendy-red transition-colors">Home & Kitchen</a>
+          <a href="#" className="text-gray-700 hover:text-trendy-red transition-colors">Beauty</a>
+          <a href="#" className="text-gray-700 hover:text-trendy-red transition-colors">Electronics</a>
+        </div>
       </div>
     </nav>
   );

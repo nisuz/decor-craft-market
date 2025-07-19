@@ -68,9 +68,9 @@ const FeaturedProducts = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button variant="cta" size="lg">
-            View All Products
-          </Button>
+          <button className="text-trendy-red font-medium hover:text-trendy-red-dark transition-colors">
+            View All Products →
+          </button>
         </div>
       </div>
     </section>

@@ -59,7 +59,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           isHovered ? "opacity-100" : "opacity-0"
         }`}>
           <Button 
-            variant="hero" 
+            variant="trendy" 
             size="sm" 
             className="w-full"
           >
